@@ -6,30 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parsulu</title>
     <base href="/" />
-    <link href="_framework/dotnet.djitxpq5u6.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-Gahx1nKX8cVNXknmnLyrjlSh6OI541D3p6S46R073vY=" />
+    <link rel="preload" id="webassembly" />
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css?v=11" />
     <link rel="icon" type="image/png" href="icon.png?v=1" />
     <link href="Parser.styles.css" rel="stylesheet" />
-    <script type="importmap">{
-  "imports": {
-    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.66stpp682q.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.djitxpq5u6.js",
-    "./_framework/dotnet.native.js": "./_framework/dotnet.native.4xbsgn06op.js",
-    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.zj9dll5ffg.js"
-  },
-  "scopes": {},
-  "integrity": {
-    "./_framework/blazor.webassembly.66stpp682q.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
-    "./_framework/blazor.webassembly.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
-    "./_framework/dotnet.djitxpq5u6.js": "sha256-Gahx1nKX8cVNXknmnLyrjlSh6OI541D3p6S46R073vY=",
-    "./_framework/dotnet.js": "sha256-Gahx1nKX8cVNXknmnLyrjlSh6OI541D3p6S46R073vY=",
-    "./_framework/dotnet.native.4xbsgn06op.js": "sha256-WHdERxxgCQA79nOtWAOvxQ2f7p1kEx+swJwfE4AE9Nk=",
-    "./_framework/dotnet.native.js": "sha256-WHdERxxgCQA79nOtWAOvxQ2f7p1kEx+swJwfE4AE9Nk=",
-    "./_framework/dotnet.runtime.js": "sha256-YdXsn/a7hb+UMypOFCf8bmv3S6PbDPewiNWqmUM/1dk=",
-    "./_framework/dotnet.runtime.zj9dll5ffg.js": "sha256-YdXsn/a7hb+UMypOFCf8bmv3S6PbDPewiNWqmUM/1dk="
-  }
-}</script>
+    <script type="importmap"></script>
 </head>
 
 <body>
@@ -61,10 +43,7 @@
         <a href="." class="reload">Reload</a>
         <span class="dismiss">🗙</span>
     </div>
-    <!--
-    <script src="_framework/blazor.webassembly.66stpp682q.js"></script>
-    -->
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
     <script src="js/site.js?v=11"></script>
 
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
