@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Giriş Yapılıyor...</title>
+</head>
+<body>
+    <script>
+        // URL'den 'code' veya 'error' parametrelerini al
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const error = urlParams.get('error');
+
+        if (window.opener) {
+            // Ana pencereye (Blazor'a) mesaj gönder
+            window.opener.postMessage({
+                type: 'GOOGLE_AUTH_CALLBACK',
+                code: code,
+                error: error
+            }, window.location.origin);
+            
+            // Pop-up'ı hemen kapat
+            window.close();
+        }
+    </script>
+    <p>Giriş tamamlandı, yönlendiriliyorsunuz...</p>
+</body>
+</html>

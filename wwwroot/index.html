@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parsulu</title>
+    <base href="/" />
+    <link href="_framework/dotnet.djitxpq5u6.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-Gahx1nKX8cVNXknmnLyrjlSh6OI541D3p6S46R073vY=" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css?v=11" />
+    <link rel="icon" type="image/png" href="icon.png?v=1" />
+    <link href="Parser.styles.css" rel="stylesheet" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.66stpp682q.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.djitxpq5u6.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.4xbsgn06op.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.zj9dll5ffg.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.66stpp682q.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
+    "./_framework/blazor.webassembly.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
+    "./_framework/dotnet.djitxpq5u6.js": "sha256-Gahx1nKX8cVNXknmnLyrjlSh6OI541D3p6S46R073vY=",
+    "./_framework/dotnet.js": "sha256-Gahx1nKX8cVNXknmnLyrjlSh6OI541D3p6S46R073vY=",
+    "./_framework/dotnet.native.4xbsgn06op.js": "sha256-WHdERxxgCQA79nOtWAOvxQ2f7p1kEx+swJwfE4AE9Nk=",
+    "./_framework/dotnet.native.js": "sha256-WHdERxxgCQA79nOtWAOvxQ2f7p1kEx+swJwfE4AE9Nk=",
+    "./_framework/dotnet.runtime.js": "sha256-YdXsn/a7hb+UMypOFCf8bmv3S6PbDPewiNWqmUM/1dk=",
+    "./_framework/dotnet.runtime.zj9dll5ffg.js": "sha256-YdXsn/a7hb+UMypOFCf8bmv3S6PbDPewiNWqmUM/1dk="
+  }
+}</script>
+</head>
+
+<body>
+    <div id="app">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background-color: #fdfdfd;">
+
+            <div style="width: 100%; max-width: 360px; padding: 40px; background: white; border-radius: 30px; box-shadow: 0 15px 35px rgba(216, 59, 1, 0.08); text-align: center;">
+
+                <p style="color: #4a4a4a; font-size: 16px; font-weight: 600; margin-bottom: 20px; letter-spacing: -0.2px;">
+                    Yükleniyor...
+                </p>
+
+                <div class="progress" style="height: 8px; border-radius: 10px; background-color: #fcece6; border: none; overflow: hidden;">
+
+                    <div class="progress-bar"
+                         role="progressbar"
+                         style="width: 100%; border-radius: 10px; background: linear-gradient(90deg, #ff825c 0%, #d83b01 100%); transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
+                         aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+
+                <div class="loading-progress-text mt-3" style="color: #d83b01; font-size: 14px; font-weight: 700; opacity: 0.8;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <!--
+    <script src="_framework/blazor.webassembly.66stpp682q.js"></script>
+    -->
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="js/site.js?v=11"></script>
+
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <script>
+        Paddle.Environment.set("sandbox");
+
+        Paddle.Initialize({
+            token: "test_a03de70347770576304c2cfe3ee" // client-side token
+        });
+
+        function openCheckoutWithPlan(priceId, userId) {
+            Paddle.Checkout.open({
+                settings: {
+                    displayMode: "overlay",
+                    theme: "light"
+                },
+                items: [{
+                    priceId: priceId,
+                    quantity: 1
+                }],
+                customData: {
+                    "user_id": userId
+                }
+            });
+
+        };
+    </script>
+
+</body>
+
+</html>
